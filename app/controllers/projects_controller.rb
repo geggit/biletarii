@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def show
 #   @project = Project.find(params[:id])
+#   @project = Project.find(params[:id])
   end
 
   def edit

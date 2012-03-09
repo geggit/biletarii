@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= @title || "Biletarii" %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= @title || "Biletarii" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
+    <% flash.each do |key, value| %>
+      <div class='flash' id='<%= key %>'>
+        <%= value %>
+      </div>
+    <% end %>
 
-<% flash.each do |key, value| %>
-  <div class='flash' id='<%= key %>'>
-    <%= value %>
-  </div>
-<% end %>
+    <h1><%= link_to "Biletarii", root_path %></h1>
+    <%= yield %>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>
-    
